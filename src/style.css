@@ -1,0 +1,101 @@
+/* ==================== 全局样式 ==================== */
+
+/* 页面容器类 - 统一的内边距和最大宽度 */
+.page-container {
+  max-width: 1200px;  /* 最大宽度限制 */
+  margin: 0 auto;     /* 水平居中 */
+  padding: 0 20px;    /* 左右内边距 */
+}
+
+/* 页面标题区域 */
+.page-header {
+  text-align: center;    /* 文字居中 */
+  margin-bottom: 3rem;    /* 底部间距 */
+}
+
+/* 主标题样式 */
+.page-title {
+  font-size: 2.5rem;                           /* 大字体 */
+  color: white;                                 /* 白色文字 */
+  margin-bottom: 1rem;                         /* 底部间距 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 文字阴影，增强可读性 */
+}
+
+/* 副标题样式 */
+.page-subtitle {
+  font-size: 1.2rem;                   /* 中等字体 */
+  color: rgba(255, 255, 255, 0.9);     /* 半透明白色 */
+}
+
+/* ==================== 卡片样式 ==================== */
+.card {
+  background: rgba(255, 255, 255, 0.95);  /* 半透明白色背景 */
+  border-radius: 16px;                    /* 大圆角 */
+  padding: 2rem;                          /* 内边距 */
+  margin-bottom: 2rem;                    /* 卡片间距 */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);  /* 阴影效果 */
+  backdrop-filter: blur(10px);            /* 毛玻璃效果 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 边框 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 悬停动画 */
+}
+
+/* 卡片悬停效果 */
+.card:hover {
+  transform: translateY(-5px);                        /* 向上浮起 */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);      /* 加深阴影 */
+}
+
+/* 卡片标题样式 */
+.card-title {
+  font-size: 1.5rem;                    /* 标题字体大小 */
+  color: #333;                          /* 深灰色文字 */
+  margin-bottom: 1rem;                  /* 标题间距 */
+  border-bottom: 2px solid #764ba2;     /* 底部分割线 */
+  padding-bottom: 0.5rem;               /* 标题内边距 */
+}
+
+/* ==================== 网格布局 ==================== */
+.grid {
+  display: grid;                                            /* 网格布局 */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自适应列数 */
+  gap: 2rem;                                               /* 网格间距 */
+  margin-top: 2rem;                                       /* 顶部间距 */
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+  /* 移动端导航栏布局调整 */
+  .header .container {
+    flex-direction: column;  /* 垂直排列 */
+    gap: 1rem;               /* 间距 */
+  }
+  
+  /* 移动端导航菜单调整 */
+  .nav {
+    flex-wrap: wrap;            /* 允许换行 */
+    justify-content: center;    /* 居中对齐 */
+    gap: 1rem;                 /* 间距 */
+  }
+  
+  /* 移动端标题字体调整 */
+  .page-title {
+    font-size: 2rem;  /* 减小字体 */
+  }
+  
+  /* 移动端网格布局调整 */
+  .grid {
+    grid-template-columns: 1fr;  /* 单列布局 */
+  }
+}
+
+/* ==================== 动画效果 ==================== */
+
+/* Vue路由切换淡入淡出动画 */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;  /* 透明度过渡动画 */
+}
+
+/* 动画开始和结束状态 */
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;  /* 完全透明 */
+}
